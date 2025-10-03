@@ -20,8 +20,9 @@ export default fastifyPlugin(async function (fastify) {
   fastify.decorate(
     "authenticate",
     async function (req: FastifyRequest, rep: FastifyReply) {
+      /*
       const token = req.cookies.access || null; // cookie "access"
-      if (!token) return rep.code(401).send({ error: "No autenticado" });
+      if (!token) return rep.code(401).send({ error: "No autenticado" });*/
       try {
         await req.jwtVerify();
       } catch {

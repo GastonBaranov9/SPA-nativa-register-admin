@@ -44,17 +44,16 @@ export const auth: FastifyPluginAsyncTypebox = async (
       };
 
       const token = fastify.jwt.sign(payload);
-
+      /*
       reply.setCookie("access", token, {
         httpOnly: true,
-        // ⚠️ en producción poné true y serví por HTTPS:
         secure: false,
         sameSite: "lax",
         path: "/",
         maxAge: 60 * 60, // 1h (segundos)
       });
 
-      return reply.send({ ok: true });
+      return reply.send({ ok: true });*/
     }
   );
   fastify.post(

@@ -29,12 +29,13 @@ const rutas: FastifyPluginAsyncTypebox = async function (fastify) {
 
       reply.send("Language set!");*/
 
+      /*
       reply.setCookie("lang", "en", {
         maxAge: 60, // segundos (no 60_000)
         path: "/",
         httpOnly: true,
         sameSite: "lax",
-      });
+      });*/
 
       return reply.code(200).send(usuarios);
     }
