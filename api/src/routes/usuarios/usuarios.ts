@@ -4,7 +4,6 @@ import { Usuario } from "../../model/usuariomodel.ts";
 import "../../plugins/jwt-plugin.ts";
 import { usuarios, create } from "../../services/usuarios-services.ts";
 import { UsuarioCrear } from "../../model/usuariomodel.ts";
-
 let nuevoID = usuarios.length + 1;
 const rutas: FastifyPluginAsyncTypebox = async function (fastify) {
   fastify.get(
@@ -21,6 +20,22 @@ const rutas: FastifyPluginAsyncTypebox = async function (fastify) {
       preHandler: [fastify.userIsAdmin],
     },
     async (req, reply) => {
+      /*
+      const cookie = serialize("lang", "en", {
+        maxAge: 60_000,
+      });
+
+      reply.header("Set-Cookie", cookie);
+
+      reply.send("Language set!");*/
+
+      reply.setCookie("lang", "en", {
+        maxAge: 60, // segundos (no 60_000)
+        path: "/",
+        httpOnly: true,
+        sameSite: "lax",
+      });
+
       return reply.code(200).send(usuarios);
     }
   );
