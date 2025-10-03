@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: lightcyan; /* igual que el segundo */
+}
+
+/* Titulares */
+.Titulo {
+  /* hace las veces de h1 */
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: darkblue;
+  text-align: left;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: rgb(0, 44, 139);
+  text-align: left;
+}
+
+/* Controles y formularios */
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: lightblue;
+  color: blue;
+  border-radius: 8px;
+  border: 2px solid darkblue;
+}
+
+form {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+label {
+  display: block;
+  margin-top: 6px;
+}
+
+input {
+  padding: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Listas */
+ul,
+.lista {
+  list-style-type: square;
+  padding: 15px; /* como el segundo */
+  padding-left: 15px; /* asegura indentación similar */
+}
+
+li,
+.lista li {
+  margin: 4px 0;
+  color: rgb(51, 32, 134);
+  border-bottom: 1px solid #ddd; /* conserva el detalle del primero si lo querés */
+  padding: 6px;
+}
+
+/* Contenedores específicos del primer CSS */
+#Listar,
+#Crear,
+#FormEditar,
+#Auth {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px; /* acorde al estilo del segundo */
+}
+
+#auth-estado {
+  margin-left: 6px;
+  color: green;
+}
