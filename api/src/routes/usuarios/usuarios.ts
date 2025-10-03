@@ -18,7 +18,7 @@ const rutas: FastifyPluginAsyncTypebox = async function (fastify) {
       },
       onRequest: [fastify.authenticate],
 
-      //preHandler: [fastify.userIsAdmin],
+      preHandler: [fastify.userIsAdmin],
     },
     async (req, reply) => {
       return reply.code(200).send(usuarios);
@@ -36,7 +36,7 @@ const rutas: FastifyPluginAsyncTypebox = async function (fastify) {
       },
       onRequest: [fastify.authenticate],
 
-      // preHandler: [fastify.userIsAdmin],
+      preHandler: [fastify.userIsAdmin],
     },
     async (req, reply) => {
       const nuevo = await create(req.body as Usuario);
